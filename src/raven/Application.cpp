@@ -3,9 +3,11 @@
 //
 
 #include "Application.h"
+#include "Render.h"
 
 void Raven::Application::run() {
-
+    Raven::Render *render = (Render*) serviceLocator->get("render");
+    render->setup();
 }
 
 Raven::Application::Application(Raven::ServiceLocator &serviceLocator) {

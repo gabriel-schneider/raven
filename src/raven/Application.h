@@ -11,6 +11,7 @@
 #include "ServiceAware.h"
 
 namespace Raven {
+
     class Application : public ServiceAware {
     public:
         Application(ServiceLocator &serviceLocator);

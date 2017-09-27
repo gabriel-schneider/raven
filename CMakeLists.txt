@@ -9,5 +9,5 @@ set(SOURCE_FILES
         src/raven/ServiceAware.cpp src/raven/ServiceAware.h
         src/raven/DummyService.cpp src/raven/DummyService.h
         src/raven/Exception.cpp src/raven/Exception.h
-        src/main.cpp src/raven/Application.cpp src/raven/Application.h)
+        src/main.cpp src/raven/Application.cpp src/raven/Application.h src/raven/Render.cpp src/raven/Render.h src/raven/OpenGLRender.cpp src/raven/OpenGLRender.h)
 add_executable(raven ${SOURCE_FILES})

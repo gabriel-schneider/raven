@@ -3,8 +3,11 @@
 //
 
 #include "ServiceLocator.h"
+#include "ServiceAware.h"
+#include "Service.h"
 
 void Raven::ServiceLocator::set(std::string name, Raven::Service *service) {
+    service->setServiceLocator(*this);
     services[name] = service;
 }
 
