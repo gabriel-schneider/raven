@@ -9,12 +9,14 @@
 
 #include "ServiceLocator.h"
 #include "ServiceAware.h"
+#include "WindowManager.h"
 
 namespace Raven {
 
     class Application : public ServiceAware {
     public:
         Application(ServiceLocator &serviceLocator);
+        void setup();
         void run();
     };
 }

@@ -9,7 +9,7 @@
 
 namespace Raven {
 
-    class Render : public Service {
+    class Renderer : public Service {
     public:
         virtual void setup() = 0;
         virtual void render() = 0;
