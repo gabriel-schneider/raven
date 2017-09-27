@@ -2,24 +2,20 @@
 // Created by Gabriel Schneider on 9/27/2017.
 //
 
-#ifndef RAVEN_APPLICATIONINTERFACE_H
-#define RAVEN_APPLICATIONINTERFACE_H
+
+
+#ifndef RAVEN_APPLICATION_H
+#define RAVEN_APPLICATION_H
 
 #include "ServiceLocator.h"
 
 namespace Raven {
-    class Application {
-    private:
-        ServiceLocator *serviceLocator;
+    class Application : public ServiceAware {
     public:
         Application(ServiceLocator &serviceLocator);
-        ServiceLocator& getServiceLocator();
-        void setServiceLocator(ServiceLocator &serviceLocator);
         void run();
-
-
     };
 }
 
 
-#endif //RAVEN_APPLICATIONINTERFACE_H
+#endif //RAVEN_APPLICATION_H

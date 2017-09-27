@@ -4,10 +4,10 @@
 
 #include "ServiceLocator.h"
 
-void Raven::ServiceLocator::set(std::string name, Service *service) {
+void Raven::ServiceLocator::set(std::string name, Raven::Service *service) {
     services[name] = service;
 }
 
-Service* Raven::ServiceLocator::get(std::string name) {
+Raven::Service* Raven::ServiceLocator::get(std::string name) {
     return services.at(name);
 }

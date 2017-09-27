@@ -1,13 +1,11 @@
 #include <iostream>
 #include "raven/Application.h"
-#include "raven/ServiceLocator.h"
 #include "raven/DummyService.h"
 
 int main() {
 
-    Raven::ServiceLocator locator = Raven::ServiceLocator();
-
-    Raven::Application app = Raven::Application(locator);
+    auto locator = Raven::ServiceLocator();
+    auto app = Raven::Application(locator);
 
     Raven::DummyService dummyA = Raven::DummyService();
     printf("DummyA  address is %p\n", &dummyA);

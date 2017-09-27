@@ -4,14 +4,6 @@
 
 #include "Application.h"
 
-Raven::ServiceLocator& Raven::Application::getServiceLocator() {
-    return *serviceLocator;
-}
-
-void Raven::Application::setServiceLocator(Raven::ServiceLocator &serviceLocator) {
-    Application::serviceLocator = &serviceLocator;
-}
-
 void Raven::Application::run() {
 
 }

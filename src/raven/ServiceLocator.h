@@ -2,6 +2,8 @@
 // Created by Gabriel Schneider on 9/27/2017.
 //
 
+
+
 #ifndef RAVEN_SERVICELOCATOR_H
 #define RAVEN_SERVICELOCATOR_H
 
@@ -9,8 +11,9 @@
 #include "Service.h"
 
 namespace Raven {
+
     class ServiceLocator {
-    private:
+    protected:
         std::map<std::string, Service*> services;
     public:
         void set(std::string name, Service* service);
