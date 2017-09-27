@@ -8,9 +8,9 @@
 #define RAVEN_SERVICELOCATOR_H
 
 #include <map>
-#include "Service.h"
 
 namespace Raven {
+    class Service;
 
     class ServiceLocator {
     protected:

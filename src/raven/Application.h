@@ -8,6 +8,7 @@
 #define RAVEN_APPLICATION_H
 
 #include "ServiceLocator.h"
+#include "ServiceAware.h"
 
 namespace Raven {
     class Application : public ServiceAware {
