@@ -6,11 +6,14 @@
 #include "ServiceAware.h"
 #include "Service.h"
 
-void Raven::ServiceLocator::set(std::string name, Raven::ServiceAware *service) {
-    service->setServiceLocator(*this);
-    services[name] = service;
+namespace Raven {
+    void ServiceLocator::set(std::string name, Raven::ServiceAware *service) {
+        service->setServiceLocator(*this);
+        services[name] = service;
+    }
+
+    ServiceAware* Raven::ServiceLocator::get(std::string name) {
+        return services.at(name);
+    }
 }
 
-Raven::ServiceAware* Raven::ServiceLocator::get(std::string name) {
-    return services.at(name);
-}

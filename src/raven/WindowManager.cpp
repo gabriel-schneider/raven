@@ -6,47 +6,51 @@
 #include <string>
 #include "Exception.h"
 
-GLFWwindow *Raven::WindowManager::getWindow() const {
-    return window;
-}
+namespace Raven {
 
-void Raven::WindowManager::create(int width, int height, std::string caption) {
-    this->width = width;
-    this->height = height;
-    this->caption = caption;
-    GLFWwindow* w = glfwCreateWindow(width, height, caption.c_str(), NULL, NULL);
-    if (!w) {
-        glfwTerminate();
-        throw Raven::Exception("Could not create window!");
+    GLFWwindow *Raven::WindowManager::getWindow() const {
+        return window;
     }
-    glfwMakeContextCurrent(w);
-    this->window = w;
-}
 
-const std::string &Raven::WindowManager::getCaption() const {
-    return caption;
-}
+    void WindowManager::create(int width, int height, std::string caption) {
+        this->width = width;
+        this->height = height;
+        this->caption = caption;
+        GLFWwindow* w = glfwCreateWindow(width, height, caption.c_str(), NULL, NULL);
+        if (!w) {
+            glfwTerminate();
+            throw Exception("Could not create window!");
+        }
+        glfwMakeContextCurrent(w);
+        this->window = w;
+    }
 
-void Raven::WindowManager::setCaption(const std::string &caption) {
-    WindowManager::caption = caption;
-}
+    const std::string &WindowManager::getCaption() const {
+        return caption;
+    }
 
-int Raven::WindowManager::getWidth() const {
-    return width;
-}
+    void WindowManager::setCaption(const std::string &caption) {
+        WindowManager::caption = caption;
+    }
 
-void Raven::WindowManager::setWidth(int width) {
-    WindowManager::width = width;
-}
+    int WindowManager::getWidth() const {
+        return width;
+    }
 
-int Raven::WindowManager::getHeight() const {
-    return height;
-}
+    void WindowManager::setWidth(int width) {
+        WindowManager::width = width;
+    }
 
-void Raven::WindowManager::setHeight(int height) {
-    WindowManager::height = height;
-}
+    int WindowManager::getHeight() const {
+        return height;
+    }
 
-void Raven::WindowManager::create() {
-    create(this->width, this->height, this->caption);
+    void WindowManager::setHeight(int height) {
+        WindowManager::height = height;
+    }
+
+    void WindowManager::create() {
+        create(this->width, this->height, this->caption);
+    }
+
 }

@@ -7,23 +7,35 @@
 #include "Renderer.h"
 #include "OpenGLRenderer.h"
 #include "Exception.h"
-void Raven::Application::run() {
-    Raven::WindowManager *windowMgr = (Raven::WindowManager*) serviceLocator->get("window");
 
-    while (!glfwWindowShouldClose(windowMgr->getWindow())) {
-        glfwPollEvents();
-        glfwSwapBuffers(windowMgr->getWindow());
+namespace Raven {
+
+    void Application::setup() {
+        if (!glfwInit()) {
+            throw Exception("Could not initialize GLFW!");
+        }
+
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+        WindowManager *windowMgr = (WindowManager*) serviceLocator->get("window");
+        windowMgr->create();
     }
-}
 
-Raven::Application::Application(Raven::ServiceLocator &serviceLocator) {
-    this->setServiceLocator(serviceLocator);
-}
+    void Application::run() {
+        WindowManager *windowMgr = (WindowManager*) serviceLocator->get("window");
 
-void Raven::Application::setup() {
-    if (!glfwInit()) {
-        throw Raven::Exception("Could not initialize GLFW!");
+        while (!glfwWindowShouldClose(windowMgr->getWindow())) {
+            glfwPollEvents();
+            glfwSwapBuffers(windowMgr->getWindow());
+        }
     }
-    Raven::WindowManager *windowMgr = (Raven::WindowManager*) serviceLocator->get("window");
-    windowMgr->create();
+
+    Application::Application(ServiceLocator &serviceLocator) {
+        this->setServiceLocator(serviceLocator);
+    }
+
+
 }
+

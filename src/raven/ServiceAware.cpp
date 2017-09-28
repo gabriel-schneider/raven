@@ -4,10 +4,13 @@
 
 #include "ServiceAware.h"
 
-Raven::ServiceLocator &Raven::ServiceAware::getServiceLocator() {
-    return *serviceLocator;
+namespace Raven {
+    ServiceLocator &Raven::ServiceAware::getServiceLocator() {
+        return *serviceLocator;
+    }
+
+    void ServiceAware::setServiceLocator(Raven::ServiceLocator &serviceLocator) {
+        this->serviceLocator = &serviceLocator;
+    }
 }
 
-void Raven::ServiceAware::setServiceLocator(Raven::ServiceLocator &serviceLocator) {
-    this->serviceLocator = &serviceLocator;
-}

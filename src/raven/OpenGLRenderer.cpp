@@ -8,21 +8,24 @@
 #include "Exception.h"
 #include "WindowManager.h"
 
-void Raven::OpenGLRenderer::setup() {
-    std::cout << "Setup" << std::endl;
-    if (!gladLoadGL()) {
-        throw Raven::Exception("Could not initialize GLAD!");
+namespace Raven {
+    void OpenGLRenderer::setup() {
+        if (!gladLoadGL()) {
+            throw Raven::Exception("Could not initialize GLAD!");
+        }
+    }
+
+    void OpenGLRenderer::render() {
+        std::cout << "Renderer!" << std::endl;
+    }
+
+    GLFWwindow *OpenGLRenderer::getWindow() const {
+        return window;
+    }
+
+    void OpenGLRenderer::setWindow(GLFWwindow *window) {
+        this->window = window;
     }
 }
 
-void Raven::OpenGLRenderer::render() {
-    std::cout << "Renderer!" << std::endl;
-}
 
-GLFWwindow *Raven::OpenGLRenderer::getWindow() const {
-    return window;
-}
-
-void Raven::OpenGLRenderer::setWindow(GLFWwindow *window) {
-    this->window = window;
-}
