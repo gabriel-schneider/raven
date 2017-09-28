@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(include)
 set(SOURCE_FILES
-        src/glad.c
+        lib/glad.c
         src/raven/ServiceLocator.cpp src/raven/ServiceLocator.h
         src/raven/Service.cpp src/raven/Service.h
         src/raven/ServiceAware.cpp src/raven/ServiceAware.h

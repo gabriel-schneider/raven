@@ -10,14 +10,14 @@
 #include <map>
 
 namespace Raven {
-    class Service;
+    class ServiceAware;
 
     class ServiceLocator {
     protected:
-        std::map<std::string, Service*> services;
+        std::map<std::string, ServiceAware*> services;
     public:
-        void set(std::string name, Service* service);
-        Service* get(std::string name);
+        void set(std::string name, ServiceAware* service);
+        ServiceAware* get(std::string name);
     };
 }
 
