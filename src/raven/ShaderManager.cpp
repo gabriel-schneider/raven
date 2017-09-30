@@ -47,13 +47,14 @@ namespace Raven {
         }
 
         Shader *shader = new Shader(programId);
+        shader->setName(name);
         shaders[name] = shader;
 
         return true;
     }
 
     bool ShaderManager::deleteShader(std::string name) {
-        return false;
+        return (bool) shaders.erase(name);
     }
 
     GLuint ShaderManager::loadShader(GLenum type, const std::string filename) {
@@ -84,5 +85,23 @@ namespace Raven {
         return shaderId;
 
     }
+
+    void ShaderManager::use(const std::string shader) {
+        try {
+            activeShader = shaders.at(shader);
+            activeShader->use();
+        } catch (const std::out_of_range& e) {
+            std::cout << e.what() << std::endl;
+        }
+    }
+
+    Shader& ShaderManager::get(const std::string name) const {
+        return *shaders.at(name);
+    }
+
+    Shader *ShaderManager::getActiveShader() const {
+        return activeShader;
+    }
+
 }
 

@@ -10,11 +10,14 @@
 #include "ServiceLocator.h"
 #include "ServiceAware.h"
 #include "WindowManager.h"
+#include <vector>
+#include "Object.h"
 
 namespace Raven {
 
     class Application : public ServiceAware {
     public:
+        std::vector<Object*> objectList;
         Application(ServiceLocator &serviceLocator);
         void setup();
         void run();
