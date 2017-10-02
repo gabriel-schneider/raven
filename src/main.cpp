@@ -38,10 +38,10 @@ int main() {
     dummy.setup();
     dummy.texture.load("res/textures/wooden.jpg");
     dummy.texture.bind();
-    dummy.x = 64;
-    dummy.y = 64;
-    dummy.width = 32;
-    dummy.height = 32;
+    dummy.x = 128;
+    dummy.y = 128;
+    dummy.width = 64;
+    dummy.height = 64;
 
     while (!glfwWindowShouldClose(windowManager->getWindow())) {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);

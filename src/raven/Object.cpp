@@ -13,21 +13,21 @@
 void Raven::Object::setup() {
 
     this->data = (Vertex*) malloc(sizeof(Vertex)*4);
-    this->data[0].position = glm::vec3(-1.0f, -1.0f, 0.0f);
-    this->data[0].color = glm::vec3(1.0f, 0.0f, 0.0f);
-    this->data[0].uv = glm::vec2(0.0f, 0.0f);
+    this->data[0].position = Vector3(-1.0f, -1.0f, 0.0f);
+    this->data[0].color = Vector3(1.0f, 0.0f, 0.0f);
+    this->data[0].uv = Vector2(0.0f, 0.0f);
 
-    this->data[1].position = glm::vec3(1.0f, -1.0f, 0.0f);
-    this->data[1].color = glm::vec3(1.0f, 0.0f, 0.0f);
-    this->data[1].uv = glm::vec2(1.0f, 0.0f);
+    this->data[1].position = Vector3(1.0f, -1.0f, 0.0f);
+    this->data[1].color = Vector3(1.0f, 0.0f, 0.0f);
+    this->data[1].uv = Vector2(1.0f, 0.0f);
 
-    this->data[2].position = glm::vec3(-1.0f, 1.0f, 0.0f);
-    this->data[2].color = glm::vec3(0.0f, 1.0f, 0.0f);
-    this->data[2].uv = glm::vec2(0.0f, 1.0f);
+    this->data[2].position = Vector3(-1.0f, 1.0f, 0.0f);
+    this->data[2].color = Vector3(0.0f, 1.0f, 0.0f);
+    this->data[2].uv = Vector2(0.0f, 1.0f);
 
-    this->data[3].position = glm::vec3(1.0f, 1.0f, 0.0f);
-    this->data[3].color = glm::vec3(1.0f, 1.0f, 1.0f);
-    this->data[3].uv = glm::vec2(1.0f, 1.0f);
+    this->data[3].position = Vector3(1.0f, 1.0f, 0.0f);
+    this->data[3].color = Vector3(1.0f, 1.0f, 1.0f);
+    this->data[3].uv = Vector2(1.0f, 1.0f);
 
     this->indices = (unsigned int*) malloc(sizeof(unsigned int)*4);
     this->indices[0] = 0;
@@ -71,11 +71,11 @@ void Raven::Object::draw() {
 }
 
 void Raven::Object::updateModelMatrix() {
-    glm::mat4 model = glm::translate(glm::mat4(), glm::vec3(x, y, z));
-    model = glm::rotate(model, (float)rotx, glm::vec3(1.0f, 0.0f, 0.0f));
-    model = glm::rotate(model, (float)roty, glm::vec3(0.0f, 1.0f, 0.0f));
-    model = glm::rotate(model, (float)rotz, glm::vec3(0.0f, 0.0f, 1.0f));
-    model = glm::scale(model, glm::vec3(scalex*width, scaley*height, scalez));
+    Matrix4 model = glm::translate(Matrix4(), Vector3(x, y, z));
+    model = glm::rotate(model, (float)rotx, Vector3(1.0f, 0.0f, 0.0f));
+    model = glm::rotate(model, (float)roty, Vector3(0.0f, 1.0f, 0.0f));
+    model = glm::rotate(model, (float)rotz, Vector3(0.0f, 0.0f, 1.0f));
+    model = glm::scale(model, Vector3(scalex*width, scaley*height, scalez));
     modelMatrix = model;
 }
 

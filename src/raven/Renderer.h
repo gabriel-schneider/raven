@@ -7,12 +7,13 @@
 
 #include <glm/glm.hpp>
 #include "Service.h"
+#include "Types.h"
 
 namespace Raven {
 
     class Renderer : public Service {
     protected:
-        glm::mat4 projectionMatrix;
+        Matrix4 projectionMatrix;
     public:
         void setProjectionMatrix(const glm::mat4 &projectionMatrix);
 
