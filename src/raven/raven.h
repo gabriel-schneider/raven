@@ -19,6 +19,8 @@
 #include "OpenGLRenderer.h"
 #include "Shader.h"
 #include "ShaderManager.h"
+#include "Texture.h"
+
 
 
 #endif //RAVEN_RAVEN_H

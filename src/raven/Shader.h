@@ -8,26 +8,25 @@
 #include <GL/gl.h>
 #include <glm/glm.hpp>
 #include <string>
+#include "Types.h"
 
 namespace Raven {
     class Shader {
     protected:
         std::string name;
     public:
-        static GLuint activeProgram;
-        static Shader* activeShader;
-
         const std::string &getName() const;
-
         void setName(const std::string &name);
-
     public:
         GLuint programId;
         void use();
-        void setBool(const std::string, bool value) const;
-        void setFloat(const std::string, float value) const;
-        void setInt(const std::string, int value) const;
-        void setMat4(const std::string, glm::mat4 value) const;
+        void setUniform(std::string uniformName, bool value) const;
+        void setUniform(std::string uniformName, float value) const;
+        void setUniform(std::string uniformName, int value) const;
+        void setUniform(std::string uniformName, Matrix4 value) const;
+        void setUniform(std::string uniformName, Vector3 value) const;
+        void setUniform(std::string uniformName, Vector2 value) const;
+
         Shader(GLuint program);
     };
 }

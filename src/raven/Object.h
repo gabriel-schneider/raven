@@ -6,20 +6,27 @@
 #define RAVEN_OBJECT_H
 
 #include "Types.h"
+#include "Texture.h"
 #include "ServiceAware.h"
 
 namespace Raven {
 
     class Object : public ServiceAware {
+    protected:
+        void updateModelMatrix();
     public:
+        Texture texture;
         glm::mat4 modelMatrix;
         Vertex* data;
-        int *indices;
-        float x, y, z;
-        int width, height;
+        unsigned int *indices;
+        float x = 0, y = 0, z = 0;
+        int rotx = 0, roty = 0, rotz = 0;
+        int scalex = 1, scaley = 1, scalez = 1;
+        int width = 32, height = 32;
         unsigned int vao, vbo, ebo;
         void setup();
-        void render();
+        void update();
+        void draw();
     };
 }
 

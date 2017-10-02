@@ -7,10 +7,17 @@
 
 #include <glm/glm.hpp>
 
+
+
 namespace Raven {
+    typedef glm::vec3 Vector3;
+    typedef glm::vec2 Vector2;
+    typedef glm::mat4 Matrix4;
+    typedef glm::mat3 Matrix3;
     struct Vertex {
-        glm::vec3 position;
-        glm::vec3 color;
+        Vector3 position;
+        Vector3 color;
+        Vector2 uv;
     };
 }
 
