@@ -5,13 +5,12 @@
 #ifndef RAVEN_SHADERMANAGER_H
 #define RAVEN_SHADERMANAGER_H
 
-#include <GL/GL.h>
+#include <glad/glad.h>
 #include <string>
 #include <map>
 #include "ServiceAware.h"
 
 namespace Raven {
-
     class Shader;
     class ShaderManager : public ServiceAware {
     protected:
@@ -21,7 +20,7 @@ namespace Raven {
         Shader *getActiveShader() const;
 
     protected:
-        GLuint loadShader(GLenum type, const std::string filename);
+        GLuint loadShader(GLenum type, std::string filename);
 
     public:
         std::map<std::string, Shader*> shaders;
@@ -29,10 +28,9 @@ namespace Raven {
         Shader& get(std::string name) const;
         const std::string &getShaderDirectory() const;
         void setShaderDirectory(const std::string &shaderDirectory);
-        bool createShader(std::string name, std::string vertexFilename, const std::string fragmentFilename);
+        bool createShader(std::string name, std::string vertexFilename, std::string fragmentFilename);
         bool deleteShader(std::string name);
         void use(std::string shader);
-
 
     };
 }
