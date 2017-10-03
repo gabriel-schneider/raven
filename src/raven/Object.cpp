@@ -72,9 +72,9 @@ void Raven::Object::draw() {
 
 void Raven::Object::updateModelMatrix() {
     Matrix4 model = glm::translate(Matrix4(), Vector3(x, y, z));
-    model = glm::rotate(model, (float)rotx, Vector3(1.0f, 0.0f, 0.0f));
-    model = glm::rotate(model, (float)roty, Vector3(0.0f, 1.0f, 0.0f));
-    model = glm::rotate(model, (float)rotz, Vector3(0.0f, 0.0f, 1.0f));
+    model = glm::rotate(model, glm::radians(rotx), Vector3(1.0f, 0.0f, 0.0f));
+    model = glm::rotate(model, glm::radians(roty), Vector3(0.0f, 1.0f, 0.0f));
+    model = glm::rotate(model, glm::radians(rotz), Vector3(0.0f, 0.0f, 1.0f));
     model = glm::scale(model, Vector3(scalex*width, scaley*height, scalez));
     modelMatrix = model;
 }

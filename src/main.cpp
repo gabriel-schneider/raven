@@ -42,16 +42,28 @@ int main() {
     dummy.y = 128;
     dummy.width = 64;
     dummy.height = 64;
+    double lastTime = 1, deltaTime = 1, fps = 1.0/60.0;
 
     while (!glfwWindowShouldClose(windowManager->getWindow())) {
+        glfwPollEvents();
+
+        deltaTime += (glfwGetTime() - lastTime) / fps;
+        lastTime = glfwGetTime();
+
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-
 
 //        double x, y;
 //        glfwGetCursorPos(windowManager->getWindow(), &x, &y);
 //        dummy.x = (float) x;
 //        dummy.y = (float) y;
+
+        while (deltaTime >= 1.0)
+        {
+            dummy.rotz += 1;
+            deltaTime --;
+        }
+
 
         shaderManager->use("default");
         glm::mat4 view;
@@ -60,7 +72,7 @@ int main() {
         dummy.texture.bind();
         dummy.draw();
 
-        glfwPollEvents();
+
         glfwSwapBuffers(windowManager->getWindow());
     }
 

@@ -16,7 +16,10 @@
 namespace Raven {
 
     class Application : public ServiceAware {
+    private:
+        double lastTime;
     public:
+        double deltaTime;
         std::vector<Object*> objectList;
         Application(ServiceLocator &serviceLocator);
         void setup();

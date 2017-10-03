@@ -20,7 +20,7 @@ namespace Raven {
         Vertex* data;
         unsigned int *indices;
         float x = 0, y = 0, z = 0;
-        int rotx = 0, roty = 0, rotz = 0;
+        float rotx = 0, roty = 0, rotz = 0;
         int scalex = 1, scaley = 1, scalez = 1;
         int width = 32, height = 32;
         unsigned int vao, vbo, ebo;
