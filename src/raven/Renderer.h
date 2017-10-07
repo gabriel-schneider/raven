@@ -6,13 +6,13 @@
 #define RAVEN_RENDER_H
 
 #include <glm/glm.hpp>
-#include "Service.h"
 #include "Types.h"
 #include "Camera.h"
+#include "ApplicationAware.h"
 
 namespace Raven {
 
-    class Renderer : public Service {
+    class Renderer : public ApplicationAware {
     protected:
         Matrix4 projectionMatrix;
     public:

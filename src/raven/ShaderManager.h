@@ -8,21 +8,17 @@
 #include <GL/gl.h>
 #include <string>
 #include <map>
-#include "ServiceAware.h"
+#include "ApplicationAware.h"
 
 namespace Raven {
     class Shader;
-    class ShaderManager : public ServiceAware {
+    class ShaderManager : public ApplicationAware {
     protected:
         std::string shaderDirectory;
         Shader* activeShader;
+        GLuint loadShader(GLenum type, std::string filename);
     public:
         Shader *getActiveShader() const;
-
-    protected:
-        GLuint loadShader(GLenum type, std::string filename);
-
-    public:
         std::map<std::string, Shader*> shaders;
         ShaderManager(std::string shaderDirectory);
         Shader& get(std::string name) const;

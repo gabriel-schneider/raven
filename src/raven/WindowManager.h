@@ -7,10 +7,10 @@
 
 #include <GLFW/glfw3.h>
 #include <string>
-#include "Service.h"
+#include "ApplicationAware.h"
 
 namespace Raven {
-    class WindowManager : public Service {
+    class WindowManager : public ApplicationAware {
     protected:
         GLFWwindow* window;
         std::string caption;

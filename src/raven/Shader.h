@@ -13,12 +13,13 @@
 namespace Raven {
     class Shader {
     protected:
-        std::string name;
+
+        GLuint programId;
     public:
         const std::string &getName() const;
         void setName(const std::string &name);
     public:
-        GLuint programId;
+        std::string name;
         void use();
         void setUniform(std::string uniformName, bool value) const;
         void setUniform(std::string uniformName, float value) const;

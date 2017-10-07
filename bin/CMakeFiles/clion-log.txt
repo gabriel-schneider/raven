@@ -1,0 +1,4 @@
+"C:\Users\Gabriel Schneider\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\172.3968.17\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\Gabriel Schneider\CLionProjects\raven"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Gabriel Schneider/CLionProjects/raven/bin

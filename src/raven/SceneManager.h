@@ -8,7 +8,7 @@
 #include "Scene.h"
 
 namespace Raven {
-    class SceneManager : public ServiceAware {
+    class SceneManager : public ApplicationAware {
     protected:
         Scene *currentScene;
     public:

@@ -5,12 +5,12 @@
 #ifndef RAVEN_SCENE_H
 #define RAVEN_SCENE_H
 
-#include "ServiceAware.h"
+#include "ApplicationAware.h"
 #include "Object.h"
 #include <vector>
 
 namespace Raven {
-    class Scene : public ServiceAware {
+    class Scene : public ApplicationAware {
     protected:
         std::vector<Object*> objects;
         //TODO: Add remove queue

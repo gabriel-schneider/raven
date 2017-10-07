@@ -10,6 +10,7 @@ namespace Raven {
     }
 
     void Scene::add(Object &object) {
+        object.setApplication(this->application);
         objects.push_back(&object);
     }
 

@@ -4,11 +4,13 @@
 
 #include <iostream>
 #include <glad/glad.h>
+#include "Application.h"
 #include "OpenGLRenderer.h"
 #include "Exception.h"
 #include "WindowManager.h"
 #include "ShaderManager.h"
 #include "Shader.h"
+
 
 namespace Raven {
     void OpenGLRenderer::setup() {
@@ -21,18 +23,11 @@ namespace Raven {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        ShaderManager* shaderManager = (ShaderManager*) serviceLocator->get("shaderManager");
+        ShaderManager* shaderManager = getApplication()->getShaderManager();
         shaderManager->getActiveShader()->setUniform("projection", getProjectionMatrix());
         shaderManager->getActiveShader()->setUniform("view", camera->getViewMatrix());
     }
 
-    GLFWwindow *OpenGLRenderer::getWindow() const {
-        return window;
-    }
-
-    void OpenGLRenderer::setWindow(GLFWwindow *window) {
-        this->window = window;
-    }
 }
 
 
