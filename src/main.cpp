@@ -1,6 +1,9 @@
 #include <iostream>
 
 #include "raven/raven.h"
+#include "raven/Scene.h"
+#include "raven/SceneManager.h"
+#include "DummyObject.h"
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -13,6 +16,7 @@ int main() {
 
     OpenGLRenderer *renderer = new OpenGLRenderer();
     renderer->setProjectionMatrix(glm::ortho(0.0f, 640.0f, 480.0f, 0.0f, -1.0f, 1.0f));
+    renderer->camera = new Camera();
     locator.set("renderer", renderer);
 
     auto windowManager = new WindowManager();
@@ -33,48 +37,22 @@ int main() {
     shaderManager->createShader("default", "default.vert", "default.frag");
     shaderManager->use("default");
 
-    Object dummy;
+    DummyObject dummy;
     dummy.setServiceLocator(locator);
     dummy.setup();
     dummy.texture.load("res/textures/wooden.jpg");
     dummy.texture.bind();
     dummy.x = 128;
     dummy.y = 128;
+    dummy.rotz = 10;
     dummy.width = 64;
     dummy.height = 64;
-    double lastTime = 1, deltaTime = 1, fps = 1.0/60.0;
 
-    while (!glfwWindowShouldClose(windowManager->getWindow())) {
-        glfwPollEvents();
+    auto *sceneManager = new SceneManager();
+    locator.set("sceneManager", sceneManager);
+    sceneManager->setCurrentScene(*(new Scene()));
 
-        deltaTime += (glfwGetTime() - lastTime) / fps;
-        lastTime = glfwGetTime();
-
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
-
-//        double x, y;
-//        glfwGetCursorPos(windowManager->getWindow(), &x, &y);
-//        dummy.x = (float) x;
-//        dummy.y = (float) y;
-
-        while (deltaTime >= 1.0)
-        {
-            dummy.rotz += 1;
-            deltaTime --;
-        }
-
-
-        shaderManager->use("default");
-        glm::mat4 view;
-        shaderManager->getActiveShader()->setUniform("view", view);
-        renderer->render();
-        dummy.texture.bind();
-        dummy.draw();
-
-
-        glfwSwapBuffers(windowManager->getWindow());
-    }
+    sceneManager->getCurrentScene().add(dummy);
 
     app.run();
 

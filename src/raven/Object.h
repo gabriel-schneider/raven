@@ -25,7 +25,7 @@ namespace Raven {
         int width = 32, height = 32;
         unsigned int vao, vbo, ebo;
         void setup();
-        void update();
+        virtual void update() = 0;
         void draw();
     };
 }

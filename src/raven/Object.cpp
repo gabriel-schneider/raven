@@ -79,6 +79,3 @@ void Raven::Object::updateModelMatrix() {
     modelMatrix = model;
 }
 
-void Raven::Object::update() {
-
-}

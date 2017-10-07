@@ -2,11 +2,16 @@
 // Created by Gabriel Schneider on 9/27/2017.
 //
 
+#include <iostream>
 #include "GLFW/glfw3.h"
+#include "ShaderManager.h"
+#include "Shader.h"
 #include "Application.h"
 #include "Renderer.h"
 #include "OpenGLRenderer.h"
 #include "Exception.h"
+#include "SceneManager.h"
+
 
 namespace Raven {
 
@@ -25,12 +30,36 @@ namespace Raven {
     }
 
     void Application::run() {
-        WindowManager *windowMgr = (WindowManager*) getServiceLocator().get("window");
-        Renderer *renderer = (Renderer*) getServiceLocator().get("renderer");
+
+        auto *windowMgr = (WindowManager*) getServiceLocator().get("window");
+        auto *renderer = (Renderer*) getServiceLocator().get("renderer");
+        auto *sceneManager = (SceneManager*) getServiceLocator().get("sceneManager");
+        auto *shaderManager = (ShaderManager*) getServiceLocator().get("shaderManager");
+
+        //TODO: Pass this code to a camera object
+//        glm::mat4 view;
+//        shaderManager->getActiveShader()->setUniform("view", view);
 
         while (!glfwWindowShouldClose(windowMgr->getWindow())) {
             glfwPollEvents();
+
+            // Delta Time
+            double now = glfwGetTime();
+            deltaTime = (now - lastTime);
+            lastTime = now;
+            updateTime += deltaTime / ( 1.0 / updateFps);
+
+            // Update
+            while (updateTime >= 1.0) {
+                for (Object* object : sceneManager->getCurrentScene().getObjects()) {
+                    object->update();
+                }
+                updateTime --;
+            }
+
+            // Render
             renderer->render();
+            sceneManager->getCurrentScene().draw();
             glfwSwapBuffers(windowMgr->getWindow());
         }
     }
@@ -38,7 +67,6 @@ namespace Raven {
     Application::Application(ServiceLocator &serviceLocator) {
         this->setServiceLocator(serviceLocator);
     }
-
 
 }
 

@@ -5,7 +5,7 @@
 #ifndef RAVEN_SHADERMANAGER_H
 #define RAVEN_SHADERMANAGER_H
 
-#include <glad/glad.h>
+#include <GL/gl.h>
 #include <string>
 #include <map>
 #include "ServiceAware.h"
