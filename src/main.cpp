@@ -35,8 +35,8 @@ int main() {
     app.setShaderManager(&shaderManager);
 
     SceneManager sceneManager;
-    sceneManager.setCurrentScene(*(new Scene()));
     app.setSceneManager(&sceneManager);
+    sceneManager.setCurrentScene(*(new Scene()));
 
     DummyObject dummy;
     dummy.setup();
@@ -48,7 +48,7 @@ int main() {
     dummy.width = 64;
     dummy.height = 64;
 
-    sceneManager.getCurrentScene().add(dummy);
+    app.getSceneManager()->getCurrentScene().add(dummy);
 
     app.run();
 

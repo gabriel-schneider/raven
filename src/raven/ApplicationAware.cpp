@@ -10,6 +10,6 @@ namespace Raven {
     }
 
     void ApplicationAware::setApplication(Application *application) {
-        ApplicationAware::application = application;
+        this->application = application;
     }
 }

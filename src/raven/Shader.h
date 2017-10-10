@@ -14,7 +14,7 @@ namespace Raven {
     class Shader {
     protected:
 
-        GLuint programId;
+        GLuint programId = -1;
     public:
         const std::string &getName() const;
         void setName(const std::string &name);

@@ -38,14 +38,15 @@ namespace Raven {
             updateTime += deltaTime / ( 1.0 / updateFps);
 
             // Update
-//            while (updateTime >= 1.0) {
+            while (updateTime >= 1.0) {
                 for (Object* object : sceneManager->getCurrentScene().getObjects()) {
                     object->update();
                 }
-//                updateTime --;
-//            }
+                updateTime --;
+            }
 
             // Render
+            shaderManager->use("default");
             renderer->render();
             sceneManager->getCurrentScene().draw();
             glfwSwapBuffers(windowManager->getWindow());
