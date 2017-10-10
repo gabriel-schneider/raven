@@ -10,6 +10,7 @@ namespace Raven {
     }
 
     void SceneManager::setCurrentScene(Scene &currentScene) {
+        currentScene.setApplication(this->application);
         SceneManager::currentScene = &currentScene;
     }
 }

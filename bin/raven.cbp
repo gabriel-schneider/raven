@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="raven"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Gabriel Schneider/CLionProjects/raven/bin"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Gabriel Schneider/CLionProjects/raven/bin"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="raven">
+				<Option output="C:/Users/Gabriel Schneider/CLionProjects/raven/bin/raven.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Gabriel Schneider/CLionProjects/raven/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Gabriel Schneider/CLionProjects/raven/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 raven"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="raven/fast">
+				<Option output="C:/Users/Gabriel Schneider/CLionProjects/raven/bin/raven.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Gabriel Schneider/CLionProjects/raven/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Gabriel Schneider/CLionProjects/raven/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 raven/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Gabriel Schneider/CLionProjects/raven/bin"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Gabriel Schneider/CLionProjects/raven/bin/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/lib/glad.c">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/DummyObject.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/DummyObject.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/main.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Application.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Application.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/ApplicationAware.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/ApplicationAware.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Camera.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Camera.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Exception.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Exception.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Object.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Object.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/OpenGLRenderer.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/OpenGLRenderer.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Renderer.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Renderer.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Scene.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Scene.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/SceneManager.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/SceneManager.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Shader.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Shader.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/ShaderManager.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/ShaderManager.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Texture.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Texture.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/Types.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/WindowManager.cpp">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/WindowManager.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/src/raven/raven.h">
+			<Option target="raven"/>
+		</Unit>
+		<Unit filename="C:/Users/Gabriel Schneider/CLionProjects/raven/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

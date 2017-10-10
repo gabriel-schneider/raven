@@ -9,16 +9,12 @@
 #include "GLFW/glfw3.h"
 
 namespace Raven {
-    class Renderer;
     class OpenGLRenderer : public Renderer {
-    protected:
-        GLFWwindow* window;
+//    protected:
+//        GLFWwindow* window;
     public:
-        GLFWwindow *getWindow() const;
-
-        void setWindow(GLFWwindow *window);
-
-    public:
+//        GLFWwindow *getWindow() const;
+//        void setWindow(GLFWwindow *window);
         void setup() override;
         void render() override;
     };

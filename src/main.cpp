@@ -10,35 +10,35 @@
 using namespace Raven;
 
 int main() {
-    //TODO: Make a better workflow
 
-    auto locator = ServiceLocator();
+    Application app;
 
-    OpenGLRenderer *renderer = new OpenGLRenderer();
-    renderer->setProjectionMatrix(glm::ortho(0.0f, 640.0f, 480.0f, 0.0f, -1.0f, 1.0f));
-    renderer->camera = new Camera();
-    locator.set("renderer", renderer);
+    OpenGLRenderer renderer;
+    renderer.setProjectionMatrix(glm::ortho(0.0f, 640.0f, 480.0f, 0.0f, -1.0f, 1.0f));
+    renderer.camera = new Camera();
+    app.setRenderer(&renderer);
 
-    auto windowManager = new WindowManager();
-    windowManager->setWidth(640);
-    windowManager->setHeight(480);
-    windowManager->setCaption("Raven Application");
+    WindowManager windowManager;
+    windowManager.setWidth(640);
+    windowManager.setHeight(480);
+    windowManager.setCaption("Raven Application");
+    app.setWindowManager(&windowManager);
 
-    locator.set("window", windowManager);
-
-    auto app = Raven::Application(locator);
     app.setup();
-    renderer->setup();
+    renderer.setup();
 
     glViewport(0, 0, 640, 480);
 
-    ShaderManager *shaderManager = new ShaderManager("res/shaders");
-    locator.set("shaderManager", shaderManager);
-    shaderManager->createShader("default", "default.vert", "default.frag");
-    shaderManager->use("default");
+    ShaderManager shaderManager("res/shaders");
+    shaderManager.createShader("default", "default.vert", "default.frag");
+    shaderManager.use("default");
+    app.setShaderManager(&shaderManager);
+
+    SceneManager sceneManager;
+    app.setSceneManager(&sceneManager);
+    sceneManager.setCurrentScene(*(new Scene()));
 
     DummyObject dummy;
-    dummy.setServiceLocator(locator);
     dummy.setup();
     dummy.texture.load("res/textures/wooden.jpg");
     dummy.texture.bind();
@@ -48,11 +48,7 @@ int main() {
     dummy.width = 64;
     dummy.height = 64;
 
-    auto *sceneManager = new SceneManager();
-    locator.set("sceneManager", sceneManager);
-    sceneManager->setCurrentScene(*(new Scene()));
-
-    sceneManager->getCurrentScene().add(dummy);
+    app.getSceneManager()->getCurrentScene().add(dummy);
 
     app.run();
 

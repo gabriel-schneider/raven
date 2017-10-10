@@ -8,7 +8,7 @@
 #include "Object.h"
 #include "ShaderManager.h"
 #include "Shader.h"
-
+#include "Application.h"
 
 void Raven::Object::setup() {
 
@@ -63,7 +63,7 @@ void Raven::Object::setup() {
 
 void Raven::Object::draw() {
     updateModelMatrix();
-    ShaderManager* shaderManager = (ShaderManager*) serviceLocator->get("shaderManager");
+    ShaderManager* shaderManager = getApplication()->getShaderManager();
     shaderManager->getActiveShader()->setUniform("model", modelMatrix);
 
     glBindVertexArray(vao);

@@ -13,7 +13,7 @@ FILE(GLOB SOURCE_FILES "lib/*.c" "src/raven/*.h" "src/raven/*.cpp" "src/*.cpp")
 file(COPY res DESTINATION .)
 
 # Linking
-add_executable(raven ${SOURCE_FILES})
+add_executable(raven ${SOURCE_FILES} src/raven/ApplicationAware.cpp src/raven/ApplicationAware.h)
 
 if (UNIX)
     target_link_libraries(raven glfw GL dl)

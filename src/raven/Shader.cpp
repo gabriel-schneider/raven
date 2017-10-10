@@ -4,6 +4,7 @@
 
 #include <glad/glad.h>
 #include <glm/gtc/type_ptr.hpp>
+#include <iostream>
 #include "Shader.h"
 
 namespace Raven {
@@ -36,7 +37,8 @@ namespace Raven {
     }
 
     void Shader::setUniform(const std::string uniformName, Matrix4 value) const {
-        glUniformMatrix4fv(glGetUniformLocation(programId, uniformName.c_str()), 1, GL_FALSE, glm::value_ptr(value));
+        int loc = glGetUniformLocation(programId, uniformName.c_str());
+        glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(value));
     }
 
     void Shader::setUniform(const std::string uniformName, Vector3 value) const {

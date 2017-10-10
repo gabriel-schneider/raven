@@ -7,11 +7,11 @@
 
 #include "Types.h"
 #include "Texture.h"
-#include "ServiceAware.h"
+#include "ApplicationAware.h"
 
 namespace Raven {
 
-    class Object : public ServiceAware {
+    class Object : public ApplicationAware {
     protected:
         void updateModelMatrix();
     public:
